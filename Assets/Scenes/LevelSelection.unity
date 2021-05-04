@@ -284,6 +284,7 @@ GameObject:
   - component: {fileID: 385873873}
   - component: {fileID: 385873875}
   - component: {fileID: 385873874}
+  - component: {fileID: 385873876}
   m_Layer: 5
   m_Name: ToxicBar
   m_TagString: Untagged
@@ -358,6 +359,29 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 385873872}
   m_CullTransparentMesh: 0
+--- !u!114 &385873876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 385873872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcd5372ec9d8c8629a22cab67f912dbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelBars:
+  - {fileID: 794346580}
+  - {fileID: 511892751}
+  - {fileID: 103189811}
+  - {fileID: 1320343294}
+  - {fileID: 1053712769}
+  - {fileID: 537487259}
+  - {fileID: 2020707936}
+  - {fileID: 1241223930}
+  - {fileID: 1177470297}
+  - {fileID: 1503422324}
 --- !u!1 &486675784
 GameObject:
   m_ObjectHideFlags: 0
