@@ -26,4 +26,7 @@ public class LevSelManager : MonoBehaviour
     public void gotoRecycle() {
     	SceneManager.LoadScene("Recycle");
     }
+    public void gotoMainMenu() {
+    	SceneManager.LoadScene("MainMenu");
+    }
 }
