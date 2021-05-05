@@ -14,4 +14,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LevelSelection.unity
     guid: 382b8223c22eb53318647b5f55506db3
+  - enabled: 1
+    path: Assets/Scenes/Recycle.unity
+    guid: 03c4e1b41692968e788a37a4eeb49693
+  - enabled: 1
+    path: Assets/Scenes/Reduce.unity
+    guid: 9704660ee35d0fa20850e6a0b2c8ee52
+  - enabled: 1
+    path: Assets/Scenes/Reuse.unity
+    guid: 17ebf87957ff15585b1dd20e6fe4c432
   m_configObjects: {}
