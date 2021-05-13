@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class LaserCollision : MonoBehaviour {
 
 	private void OnTriggerEnter2D(Collider2D other) {
-		if(other.gameObject.CompareTag("OrganicLaserTag")) {
+		if(gameObject.CompareTag("OrganicTrash") && other.gameObject.CompareTag("OrganicLaserTag")) {
 			Destroy(gameObject);
 		}
 	}
