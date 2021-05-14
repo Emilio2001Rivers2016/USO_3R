@@ -7,6 +7,9 @@ TagManager:
   - Organic
   - Inorganic
   - Special
+  - OrganicLaser
+  - InorganicLaser
+  - SpecialLaser
   layers:
   - Default
   - TransparentFX
