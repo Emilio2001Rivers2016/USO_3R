@@ -28,7 +28,6 @@ public class GameLogic : MonoBehaviour {
 	void Update()  {
 		scoreText.text = "Puntaje: " + GameLogic.recycleScore;
 		if(defeat) {
-			Time.timeScale = 0;
 			defeatScreen.gameObject.SetActive(true);
 		}
 	}

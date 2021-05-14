@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class DefeatScreenLogic : MonoBehaviour {
 
@@ -20,4 +21,16 @@ public class DefeatScreenLogic : MonoBehaviour {
 	void Update() {
 
 	}
+
+	public void PlayAgain() {
+		SceneManager.LoadScene("Recycle");
+	}
+
+	public void GotoMenu() {
+		SceneManager.LoadScene("LevelSelection");		
+	}
 }
+
+
+
+
