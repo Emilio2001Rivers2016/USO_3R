@@ -4,12 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - OrganicLaserTag
-  - InorganicLaserTag
-  - SpecialLaserTag
-  - OrganicTrash
-  - InorganicTrash
-  - SpecialTrash
+  - Organic
+  - Inorganic
+  - Special
   layers:
   - Default
   - TransparentFX
