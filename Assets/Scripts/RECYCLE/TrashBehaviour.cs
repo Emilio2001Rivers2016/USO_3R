@@ -36,7 +36,6 @@ public class TrashBehaviour : MonoBehaviour {
 		gameObject.tag = thisTag;
 		// Modifies both image size and box collider size
 		gameObject.GetComponent<BoxCollider2D>().size = new Vector2((float) Screen.width*0.1f, (float) Screen.height*0.1f);
-		gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2((float) Screen.width*0.1f, (float) Screen.height*0.1f);
 	}
 
 	// Update is called once per frame

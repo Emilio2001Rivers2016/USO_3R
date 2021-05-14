@@ -10,11 +10,10 @@ public class GameLogic : MonoBehaviour {
 
 	[SerializeField] private GameObject TrashPrefab;
 	[SerializeField] private Text scoreText;
+	[SerializeField] private Image defeatScreen;
 
-	private float minX = 0-(Screen.width/2)+Screen.width*0.2f;
-	private float maxX = 0+(Screen.width/2)-Screen.width*0.2f;
-	private float theY =  (float) 0+Screen.height*0.25f;
-	
+	private float minX = 0-(Screen.width*0.1f);
+	private float maxX = 0+(Screen.width*0.1f);
 
 	// Start is called before the first frame update
 	void Start() {
@@ -28,14 +27,17 @@ public class GameLogic : MonoBehaviour {
 	// Update is called once per frame
 	void Update()  {
 		scoreText.text = "Puntaje: " + GameLogic.recycleScore;
-		if(defeat) Time.timeScale = 0;
+		if(defeat) {
+			Time.timeScale = 0;
+			defeatScreen.gameObject.SetActive(true);
+		}
 	}
 
 	private IEnumerator GenerateTrash() {
 		while(true) {
-			var nova = Instantiate(TrashPrefab, new Vector3(Random.Range(minX, maxX), theY, 0), Quaternion.identity) as GameObject;
+			var nova = Instantiate(TrashPrefab, new Vector3(Random.Range(minX, maxX), TrashPrefab.transform.position.y, 0), Quaternion.identity) as GameObject;
 			nova.transform.SetParent(transform, false);
-			yield return new WaitForSeconds(0.5f);
+			yield return new WaitForSeconds(0.75f);
 		}
 	}
 }
