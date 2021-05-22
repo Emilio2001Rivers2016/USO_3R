@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class DoorMovement : MonoBehaviour {
 
 	private Animator animator;
-	[SerializeField] private int position;
 	
 	public int TRASH_POS;
 
