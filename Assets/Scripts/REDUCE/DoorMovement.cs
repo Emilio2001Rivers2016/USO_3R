@@ -6,9 +6,6 @@ using UnityEngine.UI;
 public class DoorMovement : MonoBehaviour {
 
 	private Animator animator;
-	
-	public int TRASH_POS;
-
 
 	// Start is called before the first frame update
 	void Start() {
@@ -17,11 +14,11 @@ public class DoorMovement : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update() {
-		makeTransition();
+
 	}
 
-	public void makeTransition() {
-		animator.SetInteger("FUTURE", TRASH_POS);
+	public void makeTransition(int futurePos) {
+		animator.SetInteger("FUTURE", futurePos);
 	}
 
 	
