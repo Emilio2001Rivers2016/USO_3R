@@ -20,7 +20,7 @@ public class DoorMovement : MonoBehaviour {
 		makeTransition();
 	}
 
-	private void makeTransition() {
+	public void makeTransition() {
 		animator.SetInteger("FUTURE", TRASH_POS);
 	}
 
