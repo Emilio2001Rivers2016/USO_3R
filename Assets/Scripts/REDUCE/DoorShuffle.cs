@@ -8,11 +8,14 @@ public class DoorShuffle : MonoBehaviour {
 	[SerializeField] private Image leftDoor, middleDoor, rightDoor;
 	private int leftPos, middlePos, rightPos, randSelect, doorSelect;
 
+	public static DoorShuffle instance;
+
 	// Start is called before the first frame update
 	void Start() {
 		leftPos = -1;
 		middlePos = 0;
 		rightPos = 1;
+		instance = this;
 	}
 
 	// Update is called once per frame
@@ -79,7 +82,7 @@ public class DoorShuffle : MonoBehaviour {
 			middleDoor.gameObject.GetComponent<DoorMovement>().makeTransition(middlePos);
 			rightDoor.gameObject.GetComponent<DoorMovement>().makeTransition(rightPos);
 
-			yield return new WaitForSeconds(0.2f);
+			yield return new WaitForSeconds(0.15f);
 		}
 	}
 

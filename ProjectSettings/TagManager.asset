@@ -10,6 +10,9 @@ TagManager:
   - OrganicLaser
   - InorganicLaser
   - SpecialLaser
+  - LeftDoor
+  - MiddleDoor
+  - RightDoor
   layers:
   - Default
   - TransparentFX
