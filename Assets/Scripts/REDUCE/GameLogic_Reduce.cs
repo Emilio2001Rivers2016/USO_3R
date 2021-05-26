@@ -5,7 +5,9 @@ using UnityEngine.UI;
 
 public class GameLogic_Reduce : MonoBehaviour {
 
-	private int index, reduceScore, resources, time;
+	public static int reduceScore;
+
+	private int index, resources, time;
 	private string[] doors = new string[3];
 
 	[SerializeField] private Text scoreText, timeText;
@@ -28,6 +30,7 @@ public class GameLogic_Reduce : MonoBehaviour {
 		scoreText.text = "Puntaje:\n" + reduceScore;
 		timeText.text = time.ToString();
 		if(resources <= 0) {
+			DefeatScreenLogic.levelFinished = "Reduce";
 			defeatScreen.gameObject.SetActive(true);
 		}
 	}
