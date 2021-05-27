@@ -12,7 +12,8 @@ public class GameLogic_Reduce : MonoBehaviour {
 	private string[] doors = new string[3];
 
 	[SerializeField] private Text scoreText, timeText;
-	[SerializeField] private Image defeatScreen;
+	[SerializeField] private Image defeatScreen, indicatorPanel;
+	[SerializeField] private Slider healthBarSlider;
 
 	// Start is called before the first frame update
 	void Start() {
@@ -30,9 +31,10 @@ public class GameLogic_Reduce : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update() {
+		healthBarSlider.value = resources;
 		scoreText.text = "Puntaje:\n" + reduceScore;
 		timeText.text = time.ToString();
-		if(resources <= 0) {
+		if(resources <= 0 || (chooseStage && time <= 0)) {
 			DefeatScreenLogic.levelFinished = "Reduce";
 			defeatScreen.gameObject.SetActive(true);
 		}
@@ -50,8 +52,10 @@ public class GameLogic_Reduce : MonoBehaviour {
 			if(doors[index] == doorTag) {
 				reduceScore++;
 				if(resources < 3) resources++;
+				StartCoroutine(rightWrongIndicator(true));
 			} else {
 				resources--;
+				StartCoroutine(rightWrongIndicator(false));
 			}
 			clicked = true;
 		}
@@ -59,11 +63,13 @@ public class GameLogic_Reduce : MonoBehaviour {
 
 	private IEnumerator timeControl() {
 		while(true) {
+			yield return new WaitForSeconds(0.2f);
+			index = (int) Random.Range(0,3);
+			DoorShuffle.instance.blink(index);
 			for(int i = 0; i < 5; i++) {
 				time--;
 				yield return new WaitForSeconds(1);
 			}
-			index = (int) Random.Range(0,3);
 			DoorShuffle.instance.shuffle();
 			time = 5;
 			yield return new WaitForSeconds(2.5f);
@@ -72,9 +78,15 @@ public class GameLogic_Reduce : MonoBehaviour {
 				time--;
 				yield return new WaitForSeconds(1);
 			}
-			time = 6;
-			chooseStage = false;
 		}
+	}
+
+	private IEnumerator rightWrongIndicator(bool right) {
+		indicatorPanel.GetComponent<Image>().color = (right) ? Color.green : Color.red;
+		indicatorPanel.gameObject.SetActive(true);
+		indicatorPanel.canvasRenderer.SetAlpha(0.4f);
+		yield return new WaitForSeconds(0.2f);
+		indicatorPanel.gameObject.SetActive(false);
 	}
 
 }
