@@ -14,6 +14,7 @@ public class GameLogic_Reduce : MonoBehaviour {
 	[SerializeField] private Text scoreText, timeText;
 	[SerializeField] private Image defeatScreen, indicatorPanel;
 	[SerializeField] private Slider healthBarSlider;
+	[SerializeField] private GameObject postProcessVol;
 
 	// Start is called before the first frame update
 	void Start() {
@@ -35,6 +36,7 @@ public class GameLogic_Reduce : MonoBehaviour {
 		scoreText.text = "Puntaje:\n" + reduceScore;
 		timeText.text = time.ToString();
 		if(resources <= 0 || (chooseStage && time <= 0)) {
+			DefeatScreenLogic.postProcessToQuit = postProcessVol;
 			DefeatScreenLogic.levelFinished = "Reduce";
 			defeatScreen.gameObject.SetActive(true);
 		}

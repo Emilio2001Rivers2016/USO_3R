@@ -1919,6 +1919,7 @@ MonoBehaviour:
   defeatScreen: {fileID: 2129056465}
   indicatorPanel: {fileID: 1019545122}
   healthBarSlider: {fileID: 1780946208}
+  postProcessVol: {fileID: 373571664}
 --- !u!1 &2026878573
 GameObject:
   m_ObjectHideFlags: 0

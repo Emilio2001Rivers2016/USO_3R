@@ -8,9 +8,11 @@ public class DefeatScreenLogic : MonoBehaviour {
 
 	[SerializeField] private Text gameScore, highScore;
 	public static string levelFinished;
+	public static GameObject postProcessToQuit;
 
 	// Start is called before the first frame update
 	void Start() {
+		postProcessToQuit.SetActive(false);
 		switch(levelFinished) {
 			case "Recycle":
 				textSetup(GameLogic.recycleScore, "RecycleRecord");

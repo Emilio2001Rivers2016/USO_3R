@@ -392,6 +392,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TrashPrefab: {fileID: 9191857207214903967, guid: 2af6949c1118d474787eb2cdece35356, type: 3}
+  postProcessVol: {fileID: 1701570676}
   scoreText: {fileID: 814863271}
   defeatScreen: {fileID: 1590591786}
 --- !u!1 &193462927
@@ -1746,6 +1747,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1557192502}
     m_Modifications:
+    - target: {fileID: 397407068923204375, guid: 4ed1d0d5aeef57ff5a0899ddf42d829f, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -700
+      objectReference: {fileID: 0}
+    - target: {fileID: 397407068923204375, guid: 4ed1d0d5aeef57ff5a0899ddf42d829f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -250
+      objectReference: {fileID: 0}
+    - target: {fileID: 4638067153442289766, guid: 4ed1d0d5aeef57ff5a0899ddf42d829f, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -700
+      objectReference: {fileID: 0}
+    - target: {fileID: 4638067153442289766, guid: 4ed1d0d5aeef57ff5a0899ddf42d829f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -250
+      objectReference: {fileID: 0}
+    - target: {fileID: 8804137560688595223, guid: 4ed1d0d5aeef57ff5a0899ddf42d829f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -125
+      objectReference: {fileID: 0}
     - target: {fileID: 8804137560998882435, guid: 4ed1d0d5aeef57ff5a0899ddf42d829f, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

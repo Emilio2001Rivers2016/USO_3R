@@ -8,7 +8,7 @@ public class GameLogic : MonoBehaviour {
 	public static int recycleScore;
 	public static bool defeat;
 
-	[SerializeField] private GameObject TrashPrefab;
+	[SerializeField] private GameObject TrashPrefab, postProcessVol;
 	[SerializeField] private Text scoreText;
 	[SerializeField] private Image defeatScreen;
 
@@ -28,6 +28,7 @@ public class GameLogic : MonoBehaviour {
 	void Update()  {
 		scoreText.text = "Puntaje: " + GameLogic.recycleScore;
 		if(defeat) {
+			DefeatScreenLogic.postProcessToQuit = postProcessVol;
 			DefeatScreenLogic.levelFinished = "Recycle";
 			defeatScreen.gameObject.SetActive(true);
 		}
