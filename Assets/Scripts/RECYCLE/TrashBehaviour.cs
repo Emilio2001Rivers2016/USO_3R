@@ -5,9 +5,10 @@ using UnityEngine.UI;
 
 public class TrashBehaviour : MonoBehaviour {
 
-	[SerializeField] private Sprite organicImg1, organicImg2, organicImg3,
-								inorganicImg1, inorganicImg2, inorganicImg3,
-								specialImg1, specialImg2, specialImg3;
+	[SerializeField] private Sprite[] organicImgs = new Sprite[6];
+	[SerializeField] private Sprite[] inorganicImgs = new Sprite[6];
+	[SerializeField] private Sprite[] specialImgs = new Sprite[6];
+
 	private string thisTag, otherTag, otherTag_wrong1, otherTag_wrong2;
 
 	// Start is called before the first frame update
@@ -17,19 +18,19 @@ public class TrashBehaviour : MonoBehaviour {
 				thisTag = "Organic";
 				otherTag_wrong1 = "InorganicLaser";
 				otherTag_wrong2 = "SpecialLaser";
-				RandomPick(organicImg1, organicImg2, organicImg3);
+				GetComponent<Image>().sprite = organicImgs[(int) Random.Range(0f, 6f)];
 				break;
 			case 1:
 				thisTag = "Inorganic";
 				otherTag_wrong1 = "OrganicLaser";
 				otherTag_wrong2 = "SpecialLaser";
-				RandomPick(inorganicImg1, inorganicImg2, inorganicImg3);
+				GetComponent<Image>().sprite = inorganicImgs[(int) Random.Range(0f, 6f)];
 				break;
 			case 2:
 				thisTag = "Special";
 				otherTag_wrong1 = "InorganicLaser";
 				otherTag_wrong2 = "OrganicLaser";
-				RandomPick(specialImg1, specialImg2, specialImg3);
+				GetComponent<Image>().sprite = specialImgs[(int) Random.Range(0f, 6f)];
 				break;
 		}
 		otherTag = thisTag+"Laser";
@@ -51,17 +52,6 @@ public class TrashBehaviour : MonoBehaviour {
 			GameLogic.recycleScore++;
 		} else if(other.gameObject.CompareTag(otherTag_wrong1) || other.gameObject.CompareTag(otherTag_wrong2)) {
 			GameLogic.defeat = true;
-		}
-	}
-
-	private void RandomPick(Sprite img1, Sprite img2, Sprite img3) {
-		switch((int) Random.Range(0f, 3f)) {
-			case 0:
-				GetComponent<Image>().sprite = img1; break;
-			case 1:
-				GetComponent<Image>().sprite = img2; break;
-			case 2:
-				GetComponent<Image>().sprite = img3; break;
 		}
 	}
 }
