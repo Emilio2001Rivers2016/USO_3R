@@ -23,7 +23,14 @@ public class MenuManagement : MonoBehaviour {
 	}
 
 	// Method to go to level selection
-	public void gotoLevSelect() { SceneManager.LoadScene("LevelSelection"); }
+	public void gotoLevSelect() { 
+		if(PlayerPrefs.GetInt("NotFirstTime")!=1) {
+			PlayerPrefs.SetInt("NotFirstTime", 1);
+			SceneManager.LoadScene("Story");
+		} else {
+			SceneManager.LoadScene("LevelSelection"); 
+		}
+	}
 
 	private IEnumerator AnimateBackground() {
 		while(true) {
@@ -50,6 +57,11 @@ public class MenuManagement : MonoBehaviour {
 	public void displayCredits() {
 		creditsActive = !creditsActive;
 		creditsPanel.gameObject.SetActive(creditsActive);
+	}
+
+	public void displayStory() {
+		PlayerPrefs.SetInt("NotFirstTime", 1);
+		SceneManager.LoadScene("Story");
 	}
 }
 
