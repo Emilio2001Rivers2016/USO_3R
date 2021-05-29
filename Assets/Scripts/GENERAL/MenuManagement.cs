@@ -6,11 +6,13 @@ using UnityEngine.UI;
 
 public class MenuManagement : MonoBehaviour {
 
-	[SerializeField] private Image background;
+	[SerializeField] private Image background, creditsPanel;
 	[SerializeField] private Sprite goodBack, badBack;
+	private bool creditsActive;
 
 	// Start is called before the first frame update
 	void Start() {
+		creditsActive = false;
 		StartCoroutine("AnimateBackground");
 	}
 
@@ -42,6 +44,11 @@ public class MenuManagement : MonoBehaviour {
 			background.CrossFadeAlpha(0, 0.5f, false);
 			yield return new WaitForSeconds(0.5f);
 		}
+	}
+
+	public void displayCredits() {
+		creditsActive = !creditsActive;
+		creditsPanel.gameObject.SetActive(creditsActive);
 	}
 }
 

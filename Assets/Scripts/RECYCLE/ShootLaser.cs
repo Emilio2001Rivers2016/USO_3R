@@ -14,7 +14,7 @@ public class ShootLaser : MonoBehaviour {
 
 	private IEnumerator shootDelay() {
 		Laser.gameObject.SetActive(true);
-		yield return new WaitForSeconds(0.25f);
+		yield return new WaitForSeconds(0.1f);
 		Laser.gameObject.SetActive(false);
 	}
 }
