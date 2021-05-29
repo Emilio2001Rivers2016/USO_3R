@@ -6,12 +6,10 @@ using UnityEngine.UI;
 public class ToxicBarUpdate : MonoBehaviour {
 
 	[SerializeField] private Image[] levelBars = new Image[10];
-	private int toxicLevel;
+	public static int toxicLevel;
 
     // Start is called before the first frame update
     void Start() {
-    	PlayerPrefs.SetInt("toxLev", (int) Random.Range(1,11)); //// SOLUTION THAT NEEDS TO BE CHANGED
-    	
         toxicLevel = PlayerPrefs.GetInt("toxLev");
     }
 
