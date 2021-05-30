@@ -44,7 +44,7 @@ public class DoorShuffle : MonoBehaviour {
 			middleDoor.gameObject.GetComponent<DoorMovement>().makeTransition(middlePos);
 			rightDoor.gameObject.GetComponent<DoorMovement>().makeTransition(rightPos);
 
-			yield return new WaitForSeconds(0.2f);
+			yield return new WaitForSeconds(0.15f);
 		}
 	}
 

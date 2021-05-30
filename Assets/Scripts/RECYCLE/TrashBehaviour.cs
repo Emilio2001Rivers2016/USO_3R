@@ -42,7 +42,7 @@ public class TrashBehaviour : MonoBehaviour {
 	// Update is called once per frame
 	void Update() {
 		if(gameObject.transform.position.y <= -6f) {
-			GameLogic.recycleScore--;
+			if(GameLogic.recycleScore > 0) GameLogic.recycleScore--;
 			Destroy(gameObject);	
 		}
 	}
