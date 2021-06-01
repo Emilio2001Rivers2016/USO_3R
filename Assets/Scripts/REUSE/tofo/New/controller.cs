@@ -8,6 +8,12 @@ public class controller : MonoBehaviour
     //private bool moving = false;
     
     //public static bool spawnPermit = true;
+	public static int reuseScore;
+
+	void Start() {
+		reuseScore = 0;	
+	}
+
     // Update is called once per frame
     private Vector2 startTouchPosition,endTouchPosition;
     void Update()

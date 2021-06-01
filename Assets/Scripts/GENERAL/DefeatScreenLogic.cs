@@ -20,6 +20,9 @@ public class DefeatScreenLogic : MonoBehaviour {
 			case "Reduce":
 				textSetup(GameLogic_Reduce.reduceScore, "ReduceRecord");
 				break;
+			case "Reuse":
+				textSetup(controller.reuseScore, "ReuseRecord");
+				break;
 		}
 	}
 

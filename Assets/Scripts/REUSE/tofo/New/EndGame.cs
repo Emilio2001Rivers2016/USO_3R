@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EndGame : MonoBehaviour
 {
@@ -8,7 +9,10 @@ public class EndGame : MonoBehaviour
     bool reduce = false;
     bool inZone = false;
     bool objectToLose = false;
-    public GameObject DeadScene;
+    public GameObject DeadScene, postProcessVol;
+	[SerializeField] private Image defeatScreen;
+
+
 
     void OnTriggerEnter2D (Collider2D col){
     
@@ -42,16 +46,22 @@ public class EndGame : MonoBehaviour
         }
 
         if (timer <= 0) {
+		DefeatScreenLogic.levelFinished = "Reuse";
+		DefeatScreenLogic.postProcessToQuit = postProcessVol;
+		defeatScreen.gameObject.SetActive(true);
             Debug.Log ("Perdiste");
-            DeadScene.SetActive(true);
+//            DeadScene.SetActive(true);
             Time.timeScale = 0;
             reduce = false;
              //put teleport part here
         }
         if(inZone && objectToLose){
+		DefeatScreenLogic.levelFinished = "Reuse";
+		DefeatScreenLogic.postProcessToQuit = postProcessVol;
+		defeatScreen.gameObject.SetActive(true);
             Debug.Log("estoy en la zona");
             Debug.Log ("Perdiste");
-            DeadScene.SetActive(true);
+//            DeadScene.SetActive(true);
             Time.timeScale = 0;
             reduce = false;
 
