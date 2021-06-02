@@ -27,9 +27,6 @@ public class DefeatScreenLogic : MonoBehaviour {
 	}
 
 	public void textSetup(int score, string levelRecord) {
-		
-		Debug.Log("HEE HEE" + score);
-
 		if(score > PlayerPrefs.GetInt(levelRecord)) {
 			PlayerPrefs.SetInt(levelRecord, score);
 		}
