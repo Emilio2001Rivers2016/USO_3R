@@ -15,13 +15,18 @@ public class GameLogic2 : MonoBehaviour
     private Vector2 screenBounds;
     public Transform[,] grid = new Transform[width,height];
     public static bool SpawnPermit = true;
+	public static int reuseScore;
+
+	void Start() {
+		reuseScore = 0;	
+	}
 
 
     // Use this for initialization
     void Awake () {
         //screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
         //StartCoroutine(blockSpawn());
-        PlayerPrefs.SetInt("Score",0);
+		reuseScore = 0;	
     }
     void Update()
     {

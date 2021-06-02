@@ -8,11 +8,6 @@ public class controller : MonoBehaviour
     //private bool moving = false;
     
     //public static bool spawnPermit = true;
-	public static int reuseScore;
-
-	void Start() {
-		reuseScore = 0;	
-	}
 
     // Update is called once per frame
     private Vector2 startTouchPosition,endTouchPosition;
@@ -54,7 +49,7 @@ public class controller : MonoBehaviour
         
         if(other.tag == this.tag && !(other.tag =="Respawn"))
         {
-            PlayerPrefs.SetInt("Score",PlayerPrefs.GetInt("Score")+100);
+            GameLogic2.reuseScore += 100;
             GameLogic2.SpawnPermit = true;
             Destroy(other.gameObject);
             Destroy(this.gameObject);

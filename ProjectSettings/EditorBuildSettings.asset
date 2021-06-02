@@ -26,7 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Story.unity
     guid: 9dae97d91f05f0fbca6427a7c8093f7b
-  - enabled: 1
-    path: Assets/Scenes/Reuse.unity
-    guid: ff655686a3bd04fd0a77d90fab51e36a
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects: {}

@@ -21,12 +21,15 @@ public class DefeatScreenLogic : MonoBehaviour {
 				textSetup(GameLogic_Reduce.reduceScore, "ReduceRecord");
 				break;
 			case "Reuse":
-				textSetup(controller.reuseScore, "ReuseRecord");
+				textSetup(GameLogic2.reuseScore, "ReuseRecord");
 				break;
 		}
 	}
 
 	public void textSetup(int score, string levelRecord) {
+		
+		Debug.Log("HEE HEE" + score);
+
 		if(score > PlayerPrefs.GetInt(levelRecord)) {
 			PlayerPrefs.SetInt(levelRecord, score);
 		}
