@@ -35,6 +35,7 @@ public class DefeatScreenLogic : MonoBehaviour {
 	}
 
 	public void PlayAgain() {
+	
 		SceneManager.LoadScene(levelFinished);
 	}
 

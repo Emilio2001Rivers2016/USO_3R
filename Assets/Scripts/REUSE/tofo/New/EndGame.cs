@@ -11,6 +11,11 @@ public class EndGame : MonoBehaviour
     bool objectToLose = false;
     public GameObject DeadScene, postProcessVol;
 	[SerializeField] private Image defeatScreen;
+    void Awake()
+    {
+        Time.timeScale = 1;
+        reduce = false;
+    }
 
 
 

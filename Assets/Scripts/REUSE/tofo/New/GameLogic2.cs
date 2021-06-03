@@ -19,6 +19,7 @@ public class GameLogic2 : MonoBehaviour
 
 	void Start() {
 		reuseScore = 0;	
+
 	}
 
 
@@ -27,6 +28,7 @@ public class GameLogic2 : MonoBehaviour
         //screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
         //StartCoroutine(blockSpawn());
 		reuseScore = 0;	
+        SpawnPermit = true;
     }
     void Update()
     {
