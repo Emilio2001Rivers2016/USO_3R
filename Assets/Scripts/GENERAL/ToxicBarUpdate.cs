@@ -10,7 +10,9 @@ public class ToxicBarUpdate : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start() {
-        toxicLevel = PlayerPrefs.GetInt("toxLev");
+	if(PlayerPrefs.GetInt("toxLev") < 1) { PlayerPrefs.SetInt("toxLev", 1); }
+	else if(PlayerPrefs.GetInt("toxLev") > 10) { PlayerPrefs.SetInt("toxLev", 10); }
+	toxicLevel = PlayerPrefs.GetInt("toxLev");
     }
 
     // Update is called once per frame
