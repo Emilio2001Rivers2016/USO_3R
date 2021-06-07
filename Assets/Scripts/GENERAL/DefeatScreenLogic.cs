@@ -28,7 +28,10 @@ public class DefeatScreenLogic : MonoBehaviour {
 
 	public void textSetup(int score, string levelRecord) {
 		if(score > PlayerPrefs.GetInt(levelRecord)) {
-			PlayerPrefs.SetInt(levelRecord, score);
+			PlayerPrefs.SetInt(levelRecord, score);	
+			PlayerPrefs.SetInt("toxLev", PlayerPrefs.GetInt("toxLev")-1);
+		} else {
+			PlayerPrefs.SetInt("toxLev", PlayerPrefs.GetInt("toxLev")+1); 
 		}
 		gameScore.text = "Puntaje de esta partida:\n" + score;
 		highScore.text = "Puntaje récord:\n" + PlayerPrefs.GetInt(levelRecord);
